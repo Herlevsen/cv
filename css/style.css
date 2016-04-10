@@ -1212,9 +1212,10 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   letter-spacing: 1px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 300;
-  line-height: 24px; }
+  line-height: 24px;
+  color: #999; }
 
 .container-fluid {
   max-width: 1100px; }
@@ -1236,17 +1237,28 @@ h1 {
   color: #333;
   word-spacing: -15px; }
   h1 span {
-    color: #457EAC; }
+    color: #AFD4C7; }
 
 div.caption {
   font-family: 'Quicksand', sans-serif;
   font-size: 20px;
-  margin-left: 22px; }
+  margin-left: 22px;
+  color: #666; }
 
 h2 {
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin: 20px 0; }
+  margin: 20px 0;
+  font-weight: 300; }
+
+h2.beam {
+  margin-bottom: 40px;
+  margin-left: -45px;
+  display: inline-block;
+  background: #AFD4C7;
+  background: linear-gradient(to right, #AFD4C7, #8ec2b0);
+  padding: 10px 20px 10px 40px;
+  color: #fff; }
 
 .container-fluid {
   padding: 0; }
@@ -1256,28 +1268,47 @@ h2 {
 
 #main {
   min-height: 100%; }
-  #main > aside {
-    min-height: 100%;
-    background: #457EAC;
-    color: #fff; }
-    #main > aside .profile-picture {
-      margin-left: -15px;
-      margin-right: -15px;
-      margin-bottom: 30px; }
   #main > section {
     min-height: 100%;
     background: #fff; }
 
-#main aside section {
-  margin-bottom: 50px; }
-  #main aside section ul {
-    list-style: none;
-    margin: 0 0 0 0;
-    padding: 0; }
-#main aside .contact {
-  margin-top: 30px; }
-  #main aside .contact ul i.fa {
-    display: inline-block;
-    width: 20px; }
+#main > aside {
+  min-height: 100%;
+  background: #AFD4C7;
+  color: #fff; }
+  #main > aside .profile-picture {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: 30px; }
+  #main > aside section {
+    margin-bottom: 50px; }
+    #main > aside section ul {
+      list-style: none;
+      margin: 0 0 0 0;
+      padding: 0; }
+  #main > aside .contact {
+    margin-top: 30px; }
+    #main > aside .contact ul i.fa {
+      display: inline-block;
+      width: 20px; }
+
+.year {
+  display: inline-block;
+  float: right;
+  font-weight: bold; }
+
+#main > section .intro {
+  text-align: justify;
+  margin-top: 40px; }
+#main > section .projects ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+#main > section .projects img {
+  margin-bottom: 10px; }
+#main > section .projects .description {
+  text-align: justify; }
+#main > section .education h3 {
+  margin-bottom: 5px; }
 
 /*# sourceMappingURL=style.css.map */

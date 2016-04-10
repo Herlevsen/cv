@@ -5,16 +5,17 @@
 @import "bootstrap/grid";
 @import "bootstrap/buttons";
 
-$mainColor: #457EAC;
+$mainColor: #AFD4C7;
 
 body {
 	background: #eee;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
 	letter-spacing: 1px;
-	font-size: 16px;
+	font-size: 15px;
 	font-weight: 300;
 	line-height: 24px;
+	color: #999;
 }
 
 .container-fluid {
@@ -51,12 +52,24 @@ div.caption {
 	font-family: 'Quicksand', sans-serif;
 	font-size: 20px;
 	margin-left: 22px;
+	color: #666;
 }
 
 h2 {
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	margin: 20px 0;
+	font-weight: 300;
+}
+
+h2.beam {
+	margin-bottom: 40px;
+	margin-left: -45px;
+    display: inline-block;
+    background: $mainColor;
+    background: linear-gradient(to right, $mainColor , darken($mainColor, 10));
+    padding: 10px 20px 10px 40px;
+    color: #fff;
 }
 
 .container-fluid {
@@ -70,25 +83,24 @@ h2 {
 #main {
 	min-height: 100%;
 
-	> aside {
-		min-height: 100%;
-		background: $mainColor;
-		color: #fff;
-
-		.profile-picture {
-			margin-left: -($grid-gutter-width / 2);
-			margin-right: -($grid-gutter-width / 2);
-			margin-bottom: 30px;
-		}
-	}
-
 	> section {
 		min-height: 100%;
 		background: #fff;
 	}
 }
 
-#main aside {
+#main > aside {
+
+	min-height: 100%;
+	background: $mainColor;
+
+	color: #fff;
+
+	.profile-picture {
+		margin-left: -($grid-gutter-width / 2);
+		margin-right: -($grid-gutter-width / 2);
+		margin-bottom: 30px;
+	}
 
 	section {
 		margin-bottom: 50px;
@@ -113,5 +125,41 @@ h2 {
 
 	.languages {
 		
+	}
+}
+
+.year {
+	display: inline-block;
+	float: right;
+	font-weight: bold;
+}
+
+#main > section {
+	.intro {
+		text-align: justify;
+		margin-top: 40px;
+	}
+
+	.projects {
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		img {
+			margin-bottom: 10px;
+		}
+
+		.description {
+			text-align: justify;
+		}
+	}
+
+	.education {
+		h3 {
+			margin-bottom: 5px;
+		}
 	}
 }
