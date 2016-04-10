@@ -1,0 +1,117 @@
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/normalize";
+@import "bootstrap/scaffolding";
+@import "bootstrap/grid";
+@import "bootstrap/buttons";
+
+$mainColor: #457EAC;
+
+body {
+	background: #eee;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	letter-spacing: 1px;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 24px;
+}
+
+.container-fluid {
+	max-width: 1100px;
+}
+
+a {
+	color: inherit;
+
+	&:hover, &:focus {
+		color: inherit;
+	}
+}
+
+img {
+	max-width: 100%;
+}
+
+h1 {
+	text-transform: uppercase;
+	font-size: 55px;
+	font-weight: 600;
+	margin: 40px 0 0 0;
+	line-height: 48px;
+	color: #333;
+	word-spacing: -15px;
+
+	span {
+		color: $mainColor;
+	}
+}
+
+div.caption {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 20px;
+	margin-left: 22px;
+}
+
+h2 {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin: 20px 0;
+}
+
+.container-fluid {
+	padding: 0;
+}
+
+.pad {
+	padding: 30px;
+}
+
+#main {
+	min-height: 100%;
+
+	> aside {
+		min-height: 100%;
+		background: $mainColor;
+		color: #fff;
+
+		.profile-picture {
+			margin-left: -($grid-gutter-width / 2);
+			margin-right: -($grid-gutter-width / 2);
+			margin-bottom: 30px;
+		}
+	}
+
+	> section {
+		min-height: 100%;
+		background: #fff;
+	}
+}
+
+#main aside {
+
+	section {
+		margin-bottom: 50px;
+
+		ul {
+			list-style: none;
+			margin: 0 0 0 0;
+			padding: 0;
+		}
+	}
+
+	.contact {
+		margin-top: 30px;
+
+		ul {
+			i.fa {
+				display: inline-block;
+				width: 20px;
+			}
+		}
+	}
+
+	.languages {
+		
+	}
+}
