@@ -1220,6 +1220,10 @@ body {
 .container-fluid {
   max-width: 1100px; }
 
+@media (min-width: 992px) {
+  .flex-container {
+    display: flex; } }
+
 a {
   color: inherit; }
   a:hover, a:focus {
@@ -1229,21 +1233,26 @@ img {
   max-width: 100%; }
 
 h1 {
+  font-size: 40px;
   text-transform: uppercase;
-  font-size: 55px;
   font-weight: 600;
   margin: 40px 0 0 0;
   line-height: 48px;
   color: #333;
   word-spacing: -15px; }
+  @media (min-width: 992px) {
+    h1 {
+      font-size: 55px; } }
   h1 span {
     color: #AFD4C7; }
 
 div.caption {
   font-family: 'Quicksand', sans-serif;
   font-size: 20px;
-  margin-left: 22px;
   color: #666; }
+  @media (min-width: 992px) {
+    div.caption {
+      margin-left: 22px; } }
 
 h2 {
   text-transform: uppercase;
@@ -1260,55 +1269,61 @@ h2.beam {
   padding: 10px 20px 10px 40px;
   color: #fff; }
 
-.container-fluid {
-  padding: 0; }
-
 .pad {
-  padding: 30px; }
+  padding: 30px 0; }
+  @media (min-width: 992px) {
+    .pad {
+      padding: 30px; } }
 
 #main {
   min-height: 100%; }
-  #main > section {
-    min-height: 100%;
-    background: #fff; }
 
-#main > aside {
+#sidebar {
   min-height: 100%;
   background: #AFD4C7;
   color: #fff; }
-  #main > aside .profile-picture {
+  #sidebar .profile-picture {
     margin-left: -15px;
     margin-right: -15px;
     margin-bottom: 30px; }
-  #main > aside section {
+  #sidebar section {
     margin-bottom: 50px; }
-    #main > aside section ul {
+    #sidebar section ul {
       list-style: none;
       margin: 0 0 0 0;
       padding: 0; }
-  #main > aside .contact {
+  #sidebar .contact {
     margin-top: 30px; }
-    #main > aside .contact ul i.fa {
+    #sidebar .contact ul i.fa {
       display: inline-block;
       width: 20px; }
 
 .year {
-  display: inline-block;
+  display: none;
   float: right;
   font-weight: bold; }
+  @media (min-width: 530px) {
+    .year {
+      display: inline-block; } }
 
-#main > section .intro {
-  text-align: justify;
-  margin-top: 40px; }
-#main > section .projects ul {
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-#main > section .projects img {
-  margin-bottom: 10px; }
-#main > section .projects .description {
-  text-align: justify; }
-#main > section .education h3 {
-  margin-bottom: 5px; }
+#content-area {
+  min-height: 100%;
+  background: #fff; }
+  #content-area .intro {
+    margin-top: 40px; }
+    @media (min-width: 768px) {
+      #content-area .intro {
+        text-align: justify; } }
+  #content-area .projects ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  #content-area .projects img {
+    margin-bottom: 10px; }
+  @media (min-width: 768px) {
+    #content-area .projects .description {
+      text-align: justify; } }
+  #content-area .education h3 {
+    margin-bottom: 5px; }
 
 /*# sourceMappingURL=style.css.map */
