@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "target": "esnext",
+      "module": "esnext",
+      "allowSyntheticDefaultImports": true,
+      "sourceMap": true,
+      "jsx": "preserve",
+      "allowJs": true,
+      "moduleResolution": "node",
+      "noUnusedParameters": true,
+      "noUnusedLocals": true,
+      "strict": true
+    },
+    "include": [
+        "./src/**/*"
+    ]
+}
