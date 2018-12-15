@@ -4,7 +4,7 @@
       "module": "esnext",
       "allowSyntheticDefaultImports": true,
       "sourceMap": true,
-      "jsx": "preserve",
+      "jsx": "react",
       "allowJs": true,
       "moduleResolution": "node",
       "noUnusedParameters": true,
