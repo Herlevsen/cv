@@ -1,39 +1,37 @@
 import * as React from 'react'
 import { Sidebar } from './Sidebar'
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
+import { Global } from '@emotion/core'
 import { Content } from './Content'
-import { injectGlobalStyles } from '../globalStyles'
+import { globalStyles } from '../globalStyles'
 
-injectGlobalStyles()
+const App: React.FC = () => (
+  <>
+    <Global styles={globalStyles} />
+    <StyledMain>
+      <StyledContainer>
+        <Sidebar />
+        <Content />
+      </StyledContainer>
+    </StyledMain>
+    )
+  </>
+)
 
-export interface AppProps {
-}
-
-export default class App extends React.Component<AppProps> {
-    public render() {
-        return (
-            <StyledMain>
-                <StyledContainer>
-                    <Sidebar />
-                    <Content />
-                </StyledContainer>
-            </StyledMain>
-        )
-    }
-}
+export default App
 
 const StyledMain = styled.div({
-    minHeight: '100%',
-    maxWidth: 1100,
-    margin: '0 auto',
+  minHeight: '100%',
+  maxWidth: 1100,
+  margin: '0 auto',
 })
 
 const StyledContainer = styled.div({
-    display: 'flex',
-    '> *:nth-child(1)': {
-        width: '40%',
-    },
-    '> *:nth-child(2)': {
-        width: '60%',
-    },
+  display: 'flex',
+  '> *:nth-child(1)': {
+    width: '40%',
+  },
+  '> *:nth-child(2)': {
+    width: '60%',
+  },
 })
