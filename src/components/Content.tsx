@@ -12,12 +12,29 @@ export const Content = () => (
       <Spacer axis={Axis.Vertical} size={Size.Tiny} />
       <SubHeading>Software Engineer from Copenhagen, Denmark</SubHeading>
       <Spacer axis={Axis.Vertical} size={Size.Medium} />
-      <section className="intro">
-        <p>Hi there! My name is Jens Ahlsten Herlevsen and I'm a software engineer from Copehagen, Denmark.</p>
-      </section>
+      <StyledIntroSection>
+        <p>My name is Jens Ahlsten Herlevsen and I'm a software engineer from Copehagen, Denmark.</p>
+        <p>I started programming on my own, in 2012. Since then i've also gotten a computer science degree.</p>
+        <p>I am a full stack developer, but I find most joy in backend development.</p>
+        <p>
+          I am proficient in multiple languages, and used to working with industry standard tools like Git and Docker,
+          and practices like software testing.
+        </p>
+        <p>As an employee, I see my strengths as:</p>
+        <ul>
+          <li>
+            Great knowledge about the whole stack, from the frontend, to the backend and to the infrastructure around
+            it.
+          </li>
+          <li>Hard working and curios.</li>
+          <li>Honest.</li>
+          <li>Team player.</li>
+          <li>I prefer to do things the "right way", but also be pragmatic.</li>
+        </ul>
+      </StyledIntroSection>
       <Spacer axis={Axis.Vertical} size={Size.Medium} />
       <ContentSection heading="Work experience">
-        <ul>
+        <StyledWorkExperienceList>
           {[
             [
               'WelcomeBob',
@@ -50,21 +67,28 @@ export const Content = () => (
               'Served as a royal life guard, and was stationed in Afghanistan for 6 months',
             ],
           ].map(workExperienceLiWrapper)}
-        </ul>
+        </StyledWorkExperienceList>
       </ContentSection>
 
       <ContentSection heading="Education">
-        <ul>
+        <StyledWorkExperienceList>
           {[
             ['Computer Science', '2014-2016', 'Copenhagen School of Design and Technology'],
             ['High School (HF)', '2007-2019', 'Frederiksborg Gymnasium og HF'],
           ].map(workExperienceLiWrapper)}
-        </ul>
+        </StyledWorkExperienceList>
       </ContentSection>
     </div>
   </Container>
 )
 
+const StyledIntroSection = styled.div({
+  p: {
+    marginBottom: 15,
+  },
+})
+
+const StyledWorkExperienceList = styled.ul({ listStyle: 'none' })
 const StyledWorkExperienceLi = styled.li({ marginBottom: '10px' })
 const workExperienceLiWrapper = ([name, period, description]: string[]) => (
   <StyledWorkExperienceLi>

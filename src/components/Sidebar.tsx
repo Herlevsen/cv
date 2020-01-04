@@ -58,13 +58,17 @@ const SidebarSection: React.SFC<SidebarSectionProps> = props => (
   <section>
     <SidebarHeading heading={props.heading} icon={props.iconName} />
     <Spacer axis={Axis.Vertical} size={Size.Small} />
-    <ul>
+    <InfoItemList>
       {props.listItems.map(([item, description]) => (
         <li title={description}>{item}</li>
       ))}
-    </ul>
+    </InfoItemList>
   </section>
 )
+
+const InfoItemList = styled.ul({
+  listStyle: 'none',
+})
 
 const PrintOnlyMessage = styled.p({
   display: 'none',

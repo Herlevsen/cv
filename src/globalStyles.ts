@@ -14,9 +14,6 @@ export const globalStyles = css({
   'article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section': {
     display: 'block',
   },
-  'ol, ul': {
-    listStyle: 'none',
-  },
   'blockquote, q': {
     quotes: 'none',
   },
