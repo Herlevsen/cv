@@ -50,34 +50,71 @@ export const languages: InfoItems = [
   ],
 ]
 export const softwareToolsAndFrameworks: InfoItems = [
-  ['Spring Framework', ''],
-  ['Gradle & Maven', ''],
-  ['Node.js', ''],
-  ['Npm & Yarn', ''],
-  ['React', ''],
-  ['React Native', ''],
-  ['Webpack', ''],
-  ['GraphQL', ''],
-  ['Apache Server', ''],
-  ['PostgresQL', ''],
-  ['MySQL', ''],
-  ['Google Cloud', ''],
-  ['AWS', ''],
-  ['Digital Ocean', ''],
-  ['Docker', ''],
-  ['Kubernetes', ''],
-  ['Firebase', ''],
-  ['Firebase Realtime DB', ''],
-  ['MongoDB', ''],
-  ['Laravel', ''],
-  ['Doctrine ORM', ''],
-  ['Drupal', ''],
-  ['October CMS', ''],
-  ['OS X', ''],
-  ['Linux', ''],
-  ['Windows', ''],
-  ['GIT', ''],
-  ['SASS', ''],
+  [
+    'Spring Framework',
+    'I have enjoyed using Spring Boot for backend development. I like the easy to setup dependency injection, and the all ready configured spring boot plugins.',
+  ],
+  ['Gradle & Maven', 'I have used both Gradle and Maven for building, and configuring Kotlin and Java apps.'],
+  [
+    'Node.js',
+    "Node.js has become my go-to for small scripts and tools. I have also used it for both API's and SSR React apps. I like the ease-of-use, pragmatic approach, the asynchrony, and performance and small resouce usage.",
+  ],
+  [
+    'Npm & Yarn',
+    'I tend to go for yarn when starting a new project, since i find it runs a bit faster. Npm seems to have fixed the reproducability issues that got me using yarn in the first place.',
+  ],
+  [
+    'React',
+    'I have used React for many web apps. I will say I have a pretty good knowledge of React and the ecosystem around it. I love the functional style of code that react allows you to write.',
+  ],
+  [
+    'React Native',
+    "I have used React Native for developing a cross platform mobile app. For me it's a big plus that I can use some of the same technologies that i would use for web apps.",
+  ],
+  ['Webpack', 'I have used webpack for many projects and I am comfortable setting it up.'],
+  [
+    'GraphQL',
+    "I have made a production GraphQL API. I love GraphQL for both it's type safety and it's ability to query complex graphs with simple to write queries.",
+  ],
+  ['Apache Server', 'Used to be my go-to server when writing php applications. I have configured many apache servers.'],
+  [
+    'PostgresQL',
+    'I have used PostgresQL in production and am comfortable with creating schemas, setting up indexes and running queries.',
+  ],
+  ['MySQL', 'I have setup many MySQL databases, both for applications and for simple CMS systems.'],
+  [
+    'Google Cloud',
+    'I have used Google Cloud in production. I am comfortable setting up VMs and other services, and setting up service accounts and such.',
+  ],
+  [
+    'AWS',
+    'I have used AWS a couple of times. I have used RDS, EC2, Fargate and KMS. I found it pretty challenging to setup networking between services.',
+  ],
+  ['Digital Ocean', 'I have used Digital Ocean for droplets, databases and also a Kubernetes Cluster.'],
+  [
+    'Docker',
+    'I use Docker every day for my development environments. Love how easy it is to spin up any service. I have also used Docker in production with Kubernetes and once with Rancher.',
+  ],
+  [
+    'Kubernetes',
+    'I am not an expert with Kubernetes but have successfully run a Kubernetes Cluster in production, on Digital Ocean. And it just works!',
+  ],
+  [
+    'Firebase',
+    'I have used firebase for a production app, that was both a mobile app and a web application. It used Firebase Realtime Database, firebase functions and some other services.',
+  ],
+  [
+    'MongoDB',
+    'I have used MongoDB on a few side-projects. I really enjoyed it and hope to use it in production some time.',
+  ],
+  [
+    'Laravel',
+    'Laravel used to be my go-to framework when doing PHP. I have worked on a pretty big REST Api written in Laravel.',
+  ],
+  ['OS X', "OS X is my OS of choice. I use it for work and at home. I like that it's built on Unix."],
+  ['Linux', 'I have configured multiple VMs with Linux and have also run Ubuntu on my own computer.'],
+  ['GIT', 'Git is of course part of my every day development toolbelt.'],
+  ['Many other things...', ''],
 ]
 
 export const driverLicenses: InfoItems = [
