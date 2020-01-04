@@ -2,13 +2,14 @@ export interface ContactInfo {
   icon: string
   text: string
   link?: string
+  onlyOnPrint?: boolean
 }
 
 export const contactInfoItems: ContactInfo[] = [
-  { icon: 'fa-phone', link: 'tel:+4526793178', text: '+45 26 79 31 78' },
+  { icon: 'fa-phone', link: 'tel:+4526793178', text: '+45 26 79 31 78', onlyOnPrint: true },
   { icon: 'fa-envelope', link: 'mailto:jensherlevsen@@gmail.com', text: 'jensherlevsen@gmail.com' },
-  { icon: 'fa-github', link: 'http://github.com/Herlevsen', text: 'github.com/Herlevsen' },
-  { icon: 'fa-linkedin', link: 'http://linkedin.com/in/jensherlevsen', text: 'linkedin.com/in/jensherlevsen' },
+  { icon: 'fa-github', link: 'http://github.com/Herlevsen', text: 'Github' },
+  { icon: 'fa-linkedin', link: 'http://linkedin.com/in/jensherlevsen', text: 'LinkedIn' },
   { icon: 'fa-calendar', text: '16/09-1990' },
   { icon: 'fa-map-marker', text: 'Copenhagen' },
 ]

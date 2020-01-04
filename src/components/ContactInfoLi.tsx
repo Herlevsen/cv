@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { ContactInfo } from '../data'
 
 const ContactInfoLi: React.FC<ContactInfo> = props => (
-  <StyledLi>
+  <StyledLi onlyOnPrint={props.onlyOnPrint || false}>
     <IconWrapper>
       <i className={`fa ${props.icon}`}></i>
     </IconWrapper>
@@ -13,10 +13,17 @@ const ContactInfoLi: React.FC<ContactInfo> = props => (
 
 export default ContactInfoLi
 
-const StyledLi = styled.li({
-  display: 'flex',
-  lineHeight: 1.8,
-})
+const StyledLi = styled.li<{ onlyOnPrint: boolean }>(
+  {
+    lineHeight: 1.8,
+  },
+  props => ({
+    display: props.onlyOnPrint ? 'none' : 'flex',
+    '@media print': {
+      display: 'flex',
+    },
+  })
+)
 
 const IconWrapper = styled.div({
   width: 30,
