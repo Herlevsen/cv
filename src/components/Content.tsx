@@ -10,7 +10,7 @@ export const Content = () => (
     <div className="pad">
       <H1>JENS HERLEVSEN</H1>
       <Spacer axis={Axis.Vertical} size={Size.Tiny} />
-      <SubHeading>Software Engineer</SubHeading>
+      <SubHeading>Software Engineer from Copenhagen, Denmark</SubHeading>
       <Spacer axis={Axis.Vertical} size={Size.Medium} />
       <section className="intro">
         <p>Hi there! My name is Jens Ahlsten Herlevsen and I'm a software engineer from Copehagen, Denmark.</p>
@@ -22,7 +22,7 @@ export const Content = () => (
             [
               'WelcomeBob',
               'Feb 2019 - Dec 2019',
-              'WelcomeBob makes smart door phones, that calls your smart phone. At WelcomeBob I worked on both the backend and the frontend applications and made a lot of progress on the product, in a short time.',
+              'WelcomeBob is a startup that makes smart door phones, that calls your smart phone. At WelcomeBob I worked on both the backend and the frontend applications and made a lot of progress on the product, in a short time.',
             ],
             [
               'Cloudhuset',

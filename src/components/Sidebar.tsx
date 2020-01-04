@@ -19,6 +19,11 @@ export const Sidebar: React.SFC = () => (
         <ul>{contactInfoItems.map(ContactInfoLi)}</ul>
       </section>
       <Spacer axis={Axis.Vertical} size={Size.Medium} />
+      <section>
+        <WebOnlyMessage>Hover over any of the items below, for an elaboration.</WebOnlyMessage>
+        <PrintOnlyMessage>Visit my online resume at herlevsen.github.io for more details</PrintOnlyMessage>
+      </section>
+      <Spacer axis={Axis.Vertical} size={Size.Medium} />
       <SidebarSection heading="Spoken languages" iconName="fa-comment" listItems={spokenLanguages} />
       <Spacer axis={Axis.Vertical} size={Size.Medium} />
       <SidebarSection heading="Languages" iconName="fa-code" listItems={languages} />
@@ -46,7 +51,7 @@ const ContentContainer = styled.div({
 interface SidebarSectionProps {
   heading: string
   iconName: string
-  listItems: string[]
+  listItems: Array<[string, string]>
 }
 
 const SidebarSection: React.SFC<SidebarSectionProps> = props => (
@@ -54,9 +59,24 @@ const SidebarSection: React.SFC<SidebarSectionProps> = props => (
     <SidebarHeading heading={props.heading} icon={props.iconName} />
     <Spacer axis={Axis.Vertical} size={Size.Small} />
     <ul>
-      {props.listItems.map(item => (
-        <li>{item}</li>
+      {props.listItems.map(([item, description]) => (
+        <li title={description}>{item}</li>
       ))}
     </ul>
   </section>
 )
+
+const PrintOnlyMessage = styled.p({
+  display: 'none',
+  margin: 0,
+  '@media print': {
+    display: 'block',
+  },
+})
+
+const WebOnlyMessage = styled.p({
+  margin: 0,
+  '@media print': {
+    display: 'none',
+  },
+})

@@ -39,6 +39,9 @@ export const globalStyles = css({
     fontSize: 15,
     lineHeight: '24px',
     color: '#999',
+    '@media print': {
+      zoom: '70%',
+    },
   },
   img: {
     maxWidth: '100%',

@@ -37,7 +37,11 @@ const Period = styled.span({
 
 const Container = styled.div({
   backgroundColor: '#eee',
+  transition: 'transform 200ms ease',
   padding: '5px 10px',
+  ':hover': {
+    transform: 'scale(1.05)',
+  },
 })
 
 export default WorkExperience
