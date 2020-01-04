@@ -1,4 +1,10 @@
-export const contactInfoItems = [
+export interface ContactInfo {
+  icon: string
+  text: string
+  link?: string
+}
+
+export const contactInfoItems: ContactInfo[] = [
   { icon: 'fa-phone', link: 'tel:+4526793178', text: '+45 26 79 31 78' },
   { icon: 'fa-envelope', link: 'mailto:jensherlevsen@@gmail.com', text: 'jensherlevsen@gmail.com' },
   { icon: 'fa-github', link: 'http://github.com/Herlevsen', text: 'github.com/Herlevsen' },
@@ -14,18 +20,21 @@ export const languages = ['Kotlin', 'Java', 'Typescript', 'Javascript', 'Haskell
 export const softwareToolsAndFrameworks = [
   'Spring Framework',
   'Gradle & Maven',
+  'Node.js',
   'React',
   'React Native',
   'Webpack',
   'GraphQL',
   'Apache Server',
   'PostgresQL',
+  'MySQL',
   'Google Cloud',
   'AWS',
   'Digital Ocean',
+  'Docker',
+  'Kubernetes',
   'Firebase',
   'Firebase Realtime DB',
-  'MySQL',
   'MongoDB',
   'Laravel',
   'Doctrine ORM',

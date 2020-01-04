@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import { H1, H2 } from './Headings'
 import WorkExperience from './WorkExperience'
 import Spacer, { Axis, Size } from './Spacer'
+import { mainColor } from '../variables'
 
 export const Content = () => (
   <Container>
@@ -92,7 +93,7 @@ const ContentSectionContainer = styled.section({
 const Beam = styled.div({
   marginLeft: '-45px',
   padding: '10px 20px 10px 40px',
-  background: 'linear-gradient(to right, #AFD4C7, #8ec2b0)',
+  background: `linear-gradient(to right, ${mainColor}, #8ec2b0)`,
   color: 'white',
   display: 'inline-block',
 })

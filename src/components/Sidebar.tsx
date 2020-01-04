@@ -1,9 +1,10 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
 import { mainColor } from '../variables'
-import { H2 } from './Headings'
 import { contactInfoItems, languages, softwareToolsAndFrameworks, spokenLanguages, driverLicenses } from '../data'
 import Spacer, { Axis, Size } from './Spacer'
+import ContactInfoLi from './ContactInfoLi'
+import SidebarHeading from './SidebarHeading'
 const profilePicturePath = require('../assets/img/profilepicture.jpg')
 
 export const Sidebar: React.SFC = () => (
@@ -13,17 +14,9 @@ export const Sidebar: React.SFC = () => (
     </section>
     <ContentContainer>
       <section>
-        <H2>
-          Contact <i className="fa fa-fax"></i>
-        </H2>
+        <SidebarHeading heading="Contact" icon="fa-user-circle-o" />
         <Spacer axis={Axis.Vertical} size={Size.Small} />
-        <ul>
-          {contactInfoItems.map(item => (
-            <li>
-              <i className={`fa ${item.icon}`}></i> {item.link ? <a href={item.link}>{item.text}</a> : item.text}
-            </li>
-          ))}
-        </ul>
+        <ul>{contactInfoItems.map(ContactInfoLi)}</ul>
       </section>
       <Spacer axis={Axis.Vertical} size={Size.Medium} />
       <SidebarSection heading="Spoken languages" iconName="fa-comment" listItems={spokenLanguages} />
@@ -58,9 +51,7 @@ interface SidebarSectionProps {
 
 const SidebarSection: React.SFC<SidebarSectionProps> = props => (
   <section>
-    <H2>
-      {props.heading} <i className={`fa ${props.iconName}`}></i>
-    </H2>
+    <SidebarHeading heading={props.heading} icon={props.iconName} />
     <Spacer axis={Axis.Vertical} size={Size.Small} />
     <ul>
       {props.listItems.map(item => (
