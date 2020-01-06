@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{"74v/":function(n,t,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/_app",function(){return e("hUgY")}])},hUgY:function(n,t,e){"use strict";e.r(t);var o=e("q1tI"),p=(e("OmL/"),o.createElement);t.default=function(n){return p(o.Fragment,null,p(n.Component,n.pageProps))}}},[["74v/",0,1,7]]]);
