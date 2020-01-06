@@ -91,7 +91,7 @@ const StyledIntroSection = styled.div({
 const StyledWorkExperienceList = styled.ul({ listStyle: 'none' })
 const StyledWorkExperienceLi = styled.li({ marginBottom: '10px' })
 const workExperienceLiWrapper = ([name, period, description]: string[]) => (
-  <StyledWorkExperienceLi>
+  <StyledWorkExperienceLi key={name}>
     <WorkExperience name={name} period={period} description={description} />
   </StyledWorkExperienceLi>
 )

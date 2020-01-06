@@ -5,39 +5,65 @@ import { contactInfoItems, languages, softwareToolsAndFrameworks, spokenLanguage
 import Spacer, { Axis, Size } from './Spacer'
 import ContactInfoLi from './ContactInfoLi'
 import SidebarHeading from './SidebarHeading'
-const profilePicturePath = require('../assets/img/profilepicture.jpg')
+import { Manager, Reference, Popper } from 'react-popper'
 
-export const Sidebar: React.SFC = () => (
-  <StyledAside>
-    <section>
-      <img src={profilePicturePath} />
-    </section>
-    <ContentContainer>
+const profilePicturePath = '/profilepicture.jpg'
+
+export const Sidebar: React.SFC = () => {
+  const [openItem, setOpenItem] = React.useState<string | null>(null)
+
+  return (
+    <StyledAside>
       <section>
-        <SidebarHeading heading="Contact" icon="fa-user-circle-o" />
-        <Spacer axis={Axis.Vertical} size={Size.Small} />
-        <ul>{contactInfoItems.map(ContactInfoLi)}</ul>
+        <img src={profilePicturePath} />
       </section>
-      <Spacer axis={Axis.Vertical} size={Size.Medium} />
-      <section>
-        <WebOnlyMessage>Hover over any of the items below, for an elaboration.</WebOnlyMessage>
-        <PrintOnlyMessage>Visit my online resume at herlevsen.github.io for more details</PrintOnlyMessage>
-      </section>
-      <Spacer axis={Axis.Vertical} size={Size.Medium} />
-      <SidebarSection heading="Spoken languages" iconName="fa-comment" listItems={spokenLanguages} />
-      <Spacer axis={Axis.Vertical} size={Size.Medium} />
-      <SidebarSection heading="Languages" iconName="fa-code" listItems={languages} />
-      <Spacer axis={Axis.Vertical} size={Size.Medium} />
-      <SidebarSection
-        heading="Software, Tools & Frameworks"
-        iconName="fa-laptop"
-        listItems={softwareToolsAndFrameworks}
-      />
-      <Spacer axis={Axis.Vertical} size={Size.Medium} />
-      <SidebarSection heading="Driver licenses" iconName="fa-id-card-o" listItems={driverLicenses} />
-    </ContentContainer>
-  </StyledAside>
-)
+      <ContentContainer>
+        <section>
+          <SidebarHeading heading="Contact" icon="fa-user-circle-o" />
+          <Spacer axis={Axis.Vertical} size={Size.Small} />
+          <ul>{contactInfoItems.map(ContactInfoLi)}</ul>
+        </section>
+        <Spacer axis={Axis.Vertical} size={Size.Medium} />
+        <section>
+          <WebOnlyMessage>Hover over any of the items below, for an elaboration.</WebOnlyMessage>
+          <PrintOnlyMessage>Visit my online resume at herlevsen.github.io for more details</PrintOnlyMessage>
+        </section>
+        <Spacer axis={Axis.Vertical} size={Size.Medium} />
+        <SidebarSection
+          heading="Spoken languages"
+          iconName="fa-comment"
+          listItems={spokenLanguages}
+          openItem={openItem}
+          setOpenItem={setOpenItem}
+        />
+        <Spacer axis={Axis.Vertical} size={Size.Medium} />
+        <SidebarSection
+          heading="Languages"
+          iconName="fa-code"
+          listItems={languages}
+          openItem={openItem}
+          setOpenItem={setOpenItem}
+        />
+        <Spacer axis={Axis.Vertical} size={Size.Medium} />
+        <SidebarSection
+          heading="Software, Tools & Frameworks"
+          iconName="fa-laptop"
+          listItems={softwareToolsAndFrameworks}
+          openItem={openItem}
+          setOpenItem={setOpenItem}
+        />
+        <Spacer axis={Axis.Vertical} size={Size.Medium} />
+        <SidebarSection
+          heading="Driver licenses"
+          iconName="fa-id-card-o"
+          listItems={driverLicenses}
+          openItem={openItem}
+          setOpenItem={setOpenItem}
+        />
+      </ContentContainer>
+    </StyledAside>
+  )
+}
 
 const StyledAside = styled.div({
   backgroundColor: mainColor,
@@ -52,19 +78,99 @@ interface SidebarSectionProps {
   heading: string
   iconName: string
   listItems: Array<[string, string]>
+  openItem: string | null
+  setOpenItem: (item: string | null) => void
 }
 
-const SidebarSection: React.SFC<SidebarSectionProps> = props => (
-  <section>
-    <SidebarHeading heading={props.heading} icon={props.iconName} />
-    <Spacer axis={Axis.Vertical} size={Size.Small} />
-    <InfoItemList>
-      {props.listItems.map(([item, description]) => (
-        <li title={description}>{item}</li>
-      ))}
-    </InfoItemList>
-  </section>
-)
+const SidebarSection: React.SFC<SidebarSectionProps> = props => {
+  return (
+    <section>
+      <SidebarHeading heading={props.heading} icon={props.iconName} />
+      <Spacer axis={Axis.Vertical} size={Size.Small} />
+      <InfoItemList>
+        {props.listItems.map(([item, description]) => (
+          <Li
+            item={item}
+            description={description}
+            isOpen={props.openItem === item}
+            toggle={() => props.setOpenItem(props.openItem === item ? null : item)}
+            key={item}
+          />
+        ))}
+      </InfoItemList>
+    </section>
+  )
+}
+
+const Li: React.FC<{
+  item: string
+  description: string
+  isOpen: boolean
+  toggle: () => void
+}> = props => {
+  return (
+    <li>
+      <Manager>
+        <Reference>
+          {({ ref }) => (
+            <div style={{ display: 'inline-block', cursor: 'pointer' }} ref={ref} onClick={props.toggle}>
+              {props.item}
+            </div>
+          )}
+        </Reference>
+        <Popper placement="right">
+          {({ ref, style, placement, arrowProps }) =>
+            props.isOpen && (
+              <div
+                ref={ref}
+                style={{
+                  ...style,
+                  backgroundColor: 'rgba(0,0,0,0.7)',
+                  maxWidth: 300,
+                  padding: 15,
+                  fontSize: 14,
+                  borderRadius: 4,
+                  marginLeft: 10,
+                }}
+                data-placement={placement}
+              >
+                <CloseButton onClick={props.toggle} children="x" />
+                {props.description}
+                <Arrow ref={arrowProps.ref} style={arrowProps.style} data-placement={placement} />
+              </div>
+            )
+          }
+        </Popper>
+      </Manager>
+    </li>
+  )
+}
+
+export const CloseButton = styled.div({
+  width: 10,
+  height: 10,
+  color: 'white',
+  position: 'absolute',
+  top: 5,
+  right: 5,
+  cursor: 'pointer',
+})
+
+export const Arrow = styled.div(`
+  position: absolute;
+  left: 0;
+  &::before {
+    border-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0.7);
+    border-width: 7px;
+    content: '';
+    margin-left: -14px;
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+`)
 
 const InfoItemList = styled.ul({
   listStyle: 'none',

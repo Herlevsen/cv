@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { ContactInfo } from '../data'
 
 const ContactInfoLi: React.FC<ContactInfo> = props => (
-  <StyledLi onlyOnPrint={props.onlyOnPrint || false}>
+  <StyledLi key={props.text} onlyOnPrint={props.onlyOnPrint || false}>
     <IconWrapper>
       <i className={`fa ${props.icon}`}></i>
     </IconWrapper>
