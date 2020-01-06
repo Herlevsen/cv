@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next",
     "clean": "rimraf .next && rimraf docs",
-    "build": "npm run clean && next build && next export --outdir ./docs",
+    "build": "npm run clean && next build && next export --outdir ./docs && touch docs/.nojekyll",
     "start": "next start"
   },
   "dependencies": {
