@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
-    "clean": "rimraf .next && rimraf out",
+    "clean": "rimraf .next && rimraf docs",
     "build": "npm run clean && next build && next export --outdir ./docs",
     "start": "next start"
   },
