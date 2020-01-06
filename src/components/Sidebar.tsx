@@ -26,7 +26,7 @@ export const Sidebar: React.SFC = () => {
         <Spacer axis={Axis.Vertical} size={Size.Medium} />
         <section>
           <WebOnlyMessage>Hover over any of the items below, for an elaboration.</WebOnlyMessage>
-          <PrintOnlyMessage>Visit my online resume at herlevsen.github.io for more details</PrintOnlyMessage>
+          <PrintOnlyMessage>Visit my online resume at herlevsen.github.io/cv/ for more details</PrintOnlyMessage>
         </section>
         <Spacer axis={Axis.Vertical} size={Size.Medium} />
         <SidebarSection
@@ -127,7 +127,7 @@ const Li: React.FC<{
                   ...style,
                   backgroundColor: 'rgba(0,0,0,0.7)',
                   maxWidth: 300,
-                  padding: 15,
+                  padding: '15px 20px 15px 15px',
                   fontSize: 14,
                   borderRadius: 4,
                   marginLeft: 10,
@@ -147,13 +147,14 @@ const Li: React.FC<{
 }
 
 export const CloseButton = styled.div({
-  width: 10,
-  height: 10,
+  lineHeight: 0,
   color: 'white',
   position: 'absolute',
-  top: 5,
+  top: 10,
   right: 5,
   cursor: 'pointer',
+  fontSize: 18,
+  fontWeight: 400,
 })
 
 export const Arrow = styled.div(`
