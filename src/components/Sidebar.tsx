@@ -25,7 +25,7 @@ export const Sidebar: React.SFC = () => {
         </section>
         <Spacer axis={Axis.Vertical} size={Size.Medium} />
         <section>
-          <WebOnlyMessage>Hover over any of the items below, for an elaboration.</WebOnlyMessage>
+          <WebOnlyMessage>Click on any of the items below, for an elaboration.</WebOnlyMessage>
           <PrintOnlyMessage>Visit my online resume at herlevsen.github.io/cv/ for more details</PrintOnlyMessage>
         </section>
         <Spacer axis={Axis.Vertical} size={Size.Medium} />
