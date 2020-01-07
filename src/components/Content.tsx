@@ -44,12 +44,12 @@ export const Content = () => (
             [
               'Cloudhuset',
               'Feb 2017 - Jan 2019',
-              'Cloudhuset is Denmarks best and most experienced Zendesk partner. At Cloudhuset I developed apps, integrations, reports, knowledgebases, etc. for many, big and small, danish and international customers',
+              'Cloudhuset is Denmarks best and most experienced Zendesk partner. At Cloudhuset I developed apps, integrations, reports, knowledgebases, etc. for many, big and small, danish and international customers.',
             ],
             [
               'Musik I Lejet',
               'Apr 2016 - Aug 2018',
-              'Musik I Lejet is a very popular festival in Tisvildeleje. I developed a CMS, where all content could be managed across their website and mobile app. I also was a part of developing their mobile app in React native',
+              'Musik I Lejet is a very popular festival in Tisvildeleje. I developed a CMS, where all content could be managed across their website and mobile app. I also was a part of developing their mobile app in React native.',
             ],
             [
               'Ageras',
@@ -59,7 +59,7 @@ export const Content = () => (
             [
               'Jey.dk',
               'Dec 2014 - Dec 2018',
-              'Jey.dk was a little side-gig that i started with a friend. We implemented websites in CMS systems, made a couple of SPA web apps, and did some integrations',
+              'Jey.dk was a little side-gig that i started with a friend. We implemented websites in CMS systems, made a couple of SPA web apps, and did some integrations.',
             ],
             [
               'Danish Royal Lifeguards',
